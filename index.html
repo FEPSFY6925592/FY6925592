@@ -130,9 +130,20 @@ p.ex1 {
   </tr>
 </table>
 
- 
 
-<!-- Adding last update -->
+<h3 id="References">References</h3>
+<p>
+  <pre>
+    Angluin, D (1988), Queries and concept learning. Machine learning 2, (4), 319-342.
+
+    Brinker, K (2003), Incorporating Diversity in Active Learning with Support Vector Machines,
+    Proceedings of the Twentieth International Conference on Machine Learning (ICML-2003).
+  </pre>
+</p>
+
+
+
+  <!-- Adding last update -->
 
   <div id="last-updated">Loading last update time...</div>
 
@@ -144,7 +155,7 @@ p.ex1 {
 
   <script>
     async function getLastUpdatedTime() {
-      const username = 'rk6925592';
+      const username = 'FEPSFY6925592';
       const repo = 'FY6925592' ;
 
       const url = 'https://api.github.com/repos/${username}/${repo}/commits';
@@ -157,8 +168,7 @@ p.ex1 {
           }
         });
         if (!response.ok) {
-
-        throw new Error('Error fetching data: ${response.status} - ${response.statusText}');
+            throw new Error('Error fetching data: ${response.status} - ${response.statusText}');
         }
         const commits = await response.json();
         if (commmits && commits.length > 0 {
@@ -186,14 +196,18 @@ p.ex1 {
     </script>
 
 
-  
+  <!-- Word count function -->
 
-<h3 id="References">References</h3>
-<p>
-  <pre>
-    Angluin, D (1988), Queries and concept learning. Machine learning 2, (4), 319-342.
+  <!-- Placeholder for total word count -->
 
-    Brinker, K (2003), Incorporating Diversity in Active Learning with Support Vector Machines,
-    Proceedings of the Twentieth International Conference on Machine Learning (ICML-2003).
-  </pre>
-</p>
+  <p id="totalWordCount"></p>
+
+  <hr>
+
+  <script>
+    //Function to calculate and display word count for a specified section
+    function displayWordCount(sectionId, outputId) {
+      // Get the text coontent from the specified section
+      const text = document.getElementById(sectionId).textContent;
+      
+  </script>
