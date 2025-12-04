@@ -325,8 +325,8 @@ In this article I will be discussing 3 main lightweight materials in Formula E c
             throw new Error('Error fetching data: ${response.status} - ${response.statusText}');
         }
         const commits = await response.json();
-        if (commmits && commits.length > 0 {
-          const lastCommitDate = new Date(commit[0].commit.committer.date);
+        if (commmits && commits.length > 0) {
+          const lastCommitDate = new Date(commits[0].commit.committer.date);
 
           //Displaying the time on load
           document.getElementById('last-updated').innerText = 'Last Modified Time: ${lastCommitDate.toLocaleString()}';
@@ -334,7 +334,7 @@ In this article I will be discussing 3 main lightweight materials in Formula E c
           document.getElementById('last-updated').innerText = 'No commits found in the repository.';
         }
       } catch (error) {
-        console.error('Error fetching the last updated time:',error);
+        console.error('Error fetching the last updated time:', error);
         document.getElementById('last-updated').innerText = 'Error fetching updated time. Please check the repository details.';
       }
     }
@@ -347,10 +347,21 @@ In this article I will be discussing 3 main lightweight materials in Formula E c
 
     //Initial load to display the time on the page load
     window.onload = getLastUpdatedTime;
-    </script>
-  </div>
-  </body>
-</html>
+  </script>
+
+    <p id="totalWordCount"></p>
+    <hr>
+    <script>
+
+      function displayWordCount(sectionId, outputId) {
+        const text = document.getElementById(sectionId).textContent;
+
+        const wordArray = text.trim()split(/\s+/);
+
+        const wordCount = wordArray.length;
+
+        return wordCount;
+      }
 
   <!-- Word count function -->
 
